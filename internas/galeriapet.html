@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site construído pelo aluno Peu para a disciplina de Introdução à Web">
+    <meta name="keywords" content="pet, cachorro, animais">
+    <title>Dog Meu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../imagens/logo_laranja.png" type="image/x-icon">
+
+    <script src="../plugins/jquery.min.js"></script>
+    <script src="../plugins/jquery.bxslider.min.js"></script>
+    <script src="../plugins/jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="../plugins/jquery.bxslider.css">
+    <link rel="stylesheet" href="../plugins/magnific-popup.css">
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('.slider').bxSlider({
+                mode: 'fade',
+                //captions: true, mostra legenda se tiver title na tag img
+                //slideWidth: 800,
+                auto: true,
+                pager: true,
+                //controls: true
+            });;
+
+            $('#pet_gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                closeOnContentClick: false,
+                closeBtnInside: false,
+                mainClass: 'mfp-with-zoom mfp-img-mobile',
+                image: {
+                    verticalFit: true,
+                    titleSrc: function (item) {
+                        return item.el.attr('title');
+                    }
+                },
+                gallery: {
+                    enabled: true
+                },
+                zoom: {
+                    enabled: true,
+                    duration: 300, // don't foget to change the duration also in CSS
+                    opener: function (element) {
+                        return element.find('img');
+                    }
+                }
+
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <header id="cabecalho">
+        <div class="container">
+            <h1><a href="../index.html" id="name"><img src="../imagens/logo.png" id="logo"> Dog Meu</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">INÍCIO</a></li>
+                    <li><a href="../internas/serviços.html">SERVIÇOS</a></li>
+                    <li><a href="#">GALERIA PET</a></li>
+                    <li><a href="../internas/raças.html">RAÇAS</a></li>
+                    <li><a href="../internas/sobrenos.html">SOBRE NÓS</a></li>
+                    <li><a href="../internas/contato.html">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="sub_header">
+        <div class="container">
+            <div id="sub_h_text">
+                <p><a href="../index.html"><strong>Início ></strong> </a><span>Galeria Pet</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pictures">
+        <div class="container">
+            <h2 class="space_between">Morra de fofura com esses doguineos</h2>
+            <div id="pet_gallery">
+                <a href="../imagens/fotosg/1.jpg" title="Foto 01"><img src="../imagens/fotosp/01.jpg" alt=""></a>
+                <a href="../imagens/fotosg/2.jpg" title="Foto 02"><img src="../imagens/fotosp/02.jpg" alt=""></a>
+                <a href="../imagens/fotosg/3.jpg" title="Foto 03"><img src="../imagens/fotosp/03.jpg" alt=""></a>
+                <a href="../imagens/fotosg/4.jpg" title="Foto 04"><img src="../imagens/fotosp/04.jpg" alt=""></a>
+                <a href="../imagens/fotosg/5.jpg" title="Foto 05"><img src="../imagens/fotosp/05.jpg" alt=""></a>
+                <a href="../imagens/fotosg/6.jpg" title="Foto 06"><img src="../imagens/fotosp/06.jpg" alt=""></a>
+                <a href="../imagens/fotosg/7.jpg" title="Foto 07"><img src="../imagens/fotosp/07.jpg" alt=""></a>
+                <a href="../imagens/fotosg/8.jpg" title="Foto 08"><img src="../imagens/fotosp/08.jpg" alt=""></a>
+                <a href="../imagens/fotosg/9.jpg" title="Foto 09"><img src="../imagens/fotosp/09.jpg" alt=""></a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div id="footer_grid">
+                <div id="coluna_1">
+                    <h1 class="footer_title"><a href="../index.html" id="name"><img src="../imagens/logo.png" id="logo">
+                            Dog Meu</a></h1>
+                    <p class="footer_nomal_text">Dog Meu foi fundado em 03 de fevereiro de 1997 pelo Dr. Fernando de
+                        Souza Barboza, Médico Veterinário especializado em cães e gatos. Seu maior desejo é de promover
+                        em um local o atendimento 24h por dia e 365 dias ao ano para animais de todas as espécies.</p>
+                </div>
+                <div id="coluna_2">
+                    <p class="footer_title">Fale conosco</p>
+                    <div class="endereco">
+                        <div class="#"><span class="footer_contact">E-mail:</span><a href="mailto:mail@empresa.com">
+                                mail@empresa.com</a>
+                        </div>
+                        <div class="#"><span class="footer_contact">Telefone:</span><a href="tel:+(00)00 0000 0000">
+                                +(00)00 0000 0000</a>
+                        </div>
+                        <div>
+                            <p class="footer_contact">Paulo Afonso, Av.Getúlio Vargas - 0,
+                                <br>prédio.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="coluna_3">
+                    <p class="footer_title">Newsletter</p>
+                    <p class="footer_nomal_text">Coloque seu e-mail para saber das notícias em primeira mão.
+                        <br>Nunca iremos compartilhar seu e-mail
+                    </p>
+
+                    <form action="">
+                        <input type="email" name="email" placeholder="Seu endereço de E-mail..." required="">
+                        <button id="button_2"><img src="../imagens/icon_envelope_white.png"
+                                onmouseover="this.src='../imagens/icon_envelope_orange.png'"
+                                onmouseout="this.src='../imagens/icon_envelope_white.png'" alt=""></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="madeby">
+            <p>© 2022 Dog Meu | Feito por <span class="color_text">Pedro Cavalcanti</span> | Projeto para a disciplina
+                de Introdução à Tecnologia Web</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
